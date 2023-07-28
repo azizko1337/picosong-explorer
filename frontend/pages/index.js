@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Form from "../components/Form/Form";
 import Input from "../components/Form/Input";
 import Button from "../components/Form/Button";
@@ -8,6 +9,7 @@ import ListElement from "../components/List/ListElement";
 import Loading from "../components/Loading/Loading";
 import toggleSongInArray from "../utils/toggleSongInArray";
 import isSongInArray from "../utils/isSongInArray";
+import NavBar from "../components/NavBar";
 
 function Index() {
   const [textToSearch, setTextToSearch] = useState("");
@@ -75,21 +77,21 @@ function Index() {
         ></Input>
         {loading ? null : (
           <>
-            <Button name="name" onClick={handleSearch}>
+            <Button title="Search by name" name="name" onClick={handleSearch}>
               name
             </Button>
-            <Button name="encoder" onClick={handleSearch}>
+            <Button
+              title="Search by encoder"
+              name="encoder"
+              onClick={handleSearch}
+            >
               encoder
             </Button>
           </>
         )}
       </Form>
-      <Header>
-        Results: ({result.length || 0}){" "}
-        {result.length > 10000
-          ? "(displaying minified results (>10000 results))"
-          : null}
-      </Header>
+
+      <Header>Results: ({result.length || 0})</Header>
       {loading ? <Loading /> : null}
       <List>
         {result.length > 0

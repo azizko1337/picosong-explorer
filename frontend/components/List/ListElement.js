@@ -35,6 +35,7 @@ function ListElement(props) {
             setLiked(!liked);
           }}
           src={liked ? "/icons/filled-star.svg" : "/icons/star.svg"}
+          title="Star song"
           width="40px"
           height="40px"
         />
@@ -43,20 +44,28 @@ function ListElement(props) {
             hideSong(song);
             setHidden(!hidden);
           }}
+          title="Hide song"
           src="/icons/slashed-eye.svg"
           width="40px"
           height="40px"
         />
       </ListElementMenu>
       <ListElementDescription>
-        <ListElementHeader target="_blank" href={song.link}>
+        <ListElementHeader
+          title="Download song"
+          target="_blank"
+          href={song.link}
+        >
           {song.name}
         </ListElementHeader>
         <Paragraph>{`Duration: ${secondsToString(song.duration)}, Size: ${
           song.size
         }, Encoder: ${song.encoder}`}</Paragraph>
         <Paragraph italic>{song.part}</Paragraph>
-        <Button onClick={() => setMaximize(!maximize)}>
+        <Button
+          title="Toggle audio player"
+          onClick={() => setMaximize(!maximize)}
+        >
           {maximize ? "noaudio" : "audio"}
         </Button>
         {maximize ? <Audio src={song.link} /> : null}
