@@ -15,7 +15,6 @@ function App(props) {
       <Head>
         <title>Picosong search</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
       </Head>
       <GlobalStyle />
       <NavBar>

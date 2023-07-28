@@ -71,6 +71,7 @@ function Index() {
       <Form>
         <Input
           onChange={(e) => setTextToSearch(e.target.value)}
+          placeholder="E.g. 'rezyseria'"
           type="text"
         ></Input>
         {loading ? null : (
