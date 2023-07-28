@@ -16,15 +16,15 @@ function ListElement(props) {
   const [liked, setLiked] = useState(isLiked);
   const [hidden, setHidden] = useState(isHidden);
 
-  if (light === true) {
-    return (
-      <ListElementContainer>
-        <ListElementHeader target="_blank" href={song.link}>
-          {song.name}
-        </ListElementHeader>
-      </ListElementContainer>
-    );
-  }
+  // if (light === true) {
+  //   return (
+  //     <ListElementContainer>
+  //       <ListElementHeader target="_blank" href={song.link}>
+  //         {song.name}
+  //       </ListElementHeader>
+  //     </ListElementContainer>
+  //   );
+  // }
 
   return (
     <ListElementContainer hidden={hidden}>

@@ -23,7 +23,9 @@ const LoadingCircle = styled.div`
     left: calc(50% - 10px);
     height: 52px;
     width: 20px;
-    background-color: #121212;
+    box-sizing: border-box;
+    border-top: 10px solid #121212;
+    border-bottom: 10px solid #121212;
     animation: rotation 1.5s infinite linear;
   }
 `;
