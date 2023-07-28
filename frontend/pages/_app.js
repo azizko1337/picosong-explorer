@@ -35,7 +35,7 @@ function App(props) {
             height="40px"
           />
         </Link>
-        <Link href="liked">
+        <Link href="/hidden">
           <Image
             title="Hidden songs"
             src="/icons/slashed-eye.svg"

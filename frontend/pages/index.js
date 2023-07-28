@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Form from "../components/Form/Form";
 import Input from "../components/Form/Input";
 import Button from "../components/Form/Button";
@@ -9,7 +8,6 @@ import ListElement from "../components/List/ListElement";
 import Loading from "../components/Loading/Loading";
 import toggleSongInArray from "../utils/toggleSongInArray";
 import isSongInArray from "../utils/isSongInArray";
-import NavBar from "../components/NavBar";
 
 function Index() {
   const [textToSearch, setTextToSearch] = useState("");

@@ -11,7 +11,16 @@ import Image from "next/image";
 import secondsToString from "../../utils/secondsToString";
 
 function ListElement(props) {
-  const { song, light, likeSong, hideSong, isLiked, isHidden } = props;
+  const {
+    song,
+    light,
+    likeSong,
+    hideSong,
+    isLiked,
+    isHidden,
+    starredPage,
+    hiddenPage,
+  } = props;
   const [maximize, setMaximize] = useState(false);
   const [liked, setLiked] = useState(isLiked);
   const [hidden, setHidden] = useState(isHidden);
@@ -26,6 +35,9 @@ function ListElement(props) {
   //   );
   // }
 
+  if (starredPage && !liked) return null;
+  if (hiddenPage && !hidden) return null;
+
   return (
     <ListElementContainer hidden={hidden}>
       <ListElementMenu>
@@ -36,8 +48,8 @@ function ListElement(props) {
           }}
           src={liked ? "/icons/filled-star.svg" : "/icons/star.svg"}
           title="Star song"
-          width="40px"
-          height="40px"
+          width="30px"
+          height="30px"
         />
         <Image
           onClick={() => {
@@ -46,8 +58,8 @@ function ListElement(props) {
           }}
           title="Hide song"
           src="/icons/slashed-eye.svg"
-          width="40px"
-          height="40px"
+          width="30px"
+          height="30px"
         />
       </ListElementMenu>
       <ListElementDescription>
