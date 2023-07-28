@@ -1,8 +1,8 @@
-## What's that project?
-
-### This is simple website deisgned to find new leaked songs from picosong easily.
+## This is simple website deisgned to find new leaked songs from picosong easily.
 
 ## Currently hosted on: http://picosong.azalupka.cc
+
+### Liking and hiding songs is stored only in browser' localstorage!
 
 ## Instruction to run this project locally: 0. Project developed on: node@16.13.1; npm@8.3.0
 
