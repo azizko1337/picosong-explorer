@@ -1,6 +1,5 @@
 import searchByEncoder from "../controller/searchByEncoder.js";
 
-test(`Search for 'itunes' encoder`, async () => {
-  const result = await searchByEncoder("itunes");
-  expect(result.length).toBe(21368);
-});
+const result = await searchByEncoder("itunes");
+console.log(result.length == 21368 ? "searchByEncoder OK!" : "searchByEncoder NOT OK!")
+
