@@ -93,18 +93,17 @@ function Index() {
       {loading ? <Loading /> : null}
       <List>
         {result.length > 0
-          ? result.map((song) =>
-              isSongInArray(song, hiddenSongs) ? null : (
-                <ListElement
-                  isLiked={isSongInArray(song, likedSongs)}
-                  likeSong={likeSong}
-                  hideSong={hideSong}
-                  light={result.length > 10000}
-                  key={song.id}
-                  song={song}
-                />
-              )
-            )
+          ? result.map((song) => (
+              <ListElement
+                isLiked={isSongInArray(song, likedSongs)}
+                isHidden={isSongInArray(song, hiddenSongs)}
+                likeSong={likeSong}
+                hideSong={hideSong}
+                light={result.length > 10000}
+                key={song.id}
+                song={song}
+              />
+            ))
           : null}
       </List>
     </>

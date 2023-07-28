@@ -8,14 +8,13 @@ import Button from "../Form/Button";
 import ListElementDescription from "./ListElementDescription";
 import ListElementMenu from "./ListElementMenu";
 import Image from "next/image";
+import secondsToString from "../../utils/secondsToString";
 
 function ListElement(props) {
-  const { song, light, likeSong, hideSong, isLiked } = props;
+  const { song, light, likeSong, hideSong, isLiked, isHidden } = props;
   const [maximize, setMaximize] = useState(false);
   const [liked, setLiked] = useState(isLiked);
-  const [hidden, setHidden] = useState(false);
-
-  if (hidden === true) return null;
+  const [hidden, setHidden] = useState(isHidden);
 
   if (light === true) {
     return (
@@ -28,7 +27,7 @@ function ListElement(props) {
   }
 
   return (
-    <ListElementContainer>
+    <ListElementContainer hidden={hidden}>
       <ListElementMenu>
         <Image
           onClick={() => {
@@ -42,9 +41,9 @@ function ListElement(props) {
         <Image
           onClick={() => {
             hideSong(song);
-            setHidden(true);
+            setHidden(!hidden);
           }}
-          src="/icons/eye.svg"
+          src="/icons/slashed-eye.svg"
           width="40px"
           height="40px"
         />
@@ -53,9 +52,9 @@ function ListElement(props) {
         <ListElementHeader target="_blank" href={song.link}>
           {song.name}
         </ListElementHeader>
-        <Paragraph>{`Duration: ${Math.floor(song.duration / 60)}:${
-          song.duration % 60
-        }, Size: ${song.size}, Encoder: ${song.encoder}`}</Paragraph>
+        <Paragraph>{`Duration: ${secondsToString(song.duration)}, Size: ${
+          song.size
+        }, Encoder: ${song.encoder}`}</Paragraph>
         <Paragraph italic>{song.part}</Paragraph>
         <Button onClick={() => setMaximize(!maximize)}>
           {maximize ? "noaudio" : "audio"}

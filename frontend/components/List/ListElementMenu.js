@@ -5,7 +5,7 @@ const ListElementMenu = styled.div`
   max-width: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
 
   & > * :hover {
