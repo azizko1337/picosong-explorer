@@ -1,4 +1,4 @@
-## This is simple website deisgned to find new leaked songs from picosong easily.
+## This is simple website desired to find new leaked songs from picosong easily.
 
 ## Currently hosted on: http://picosong.azalupka.cc
 
