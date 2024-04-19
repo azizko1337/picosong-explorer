@@ -8,7 +8,7 @@
 
 ### DISCLAIMER: You need to have installed git-lfs to clone this repo (due to database 500MB size)
 
-0. Project developed on: node@16.13.1; npm@8.3.0
+0. Project developed on: node@16.13.1; npm@8.3.0. You can clone repo with `git-lfs clone ...`
 1. Configure config files: backend/config.js, frontend/next.config.js.
 2. Go to backend folder, and run `npm install` command. Now you can optionally run `npm run test` command to check if database is downloaded properly.
 3. Go to frontend folder, and run sequentially `npm install` and `npm run build` commands
